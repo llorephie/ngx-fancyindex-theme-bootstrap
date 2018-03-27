@@ -1,5 +1,5 @@
 # ngx-fancyindex-theme-bootstrap
-Bootstrap 3 theme for [NGINX](https://www.nginx.org/) server with [ngx-fancyindex](https://github.com/aperezdc/ngx-fancyindex) module. Minimal, modern and simple.
+Bootstrap 4 theme for [NGINX](https://www.nginx.org/) server with [ngx-fancyindex](https://github.com/aperezdc/ngx-fancyindex) module. Minimal, modern and simple.
 Comes with a search form (only in current directory)
 
 ## Usage
@@ -31,3 +31,6 @@ fancyindex_name_length 255;
 ## Examples
 
 Working example can be checked out at [https://files.llorephie.org/](https://files.llorephie.org).
+
+## Tricks
+To ignore some directories and files to be publically listed append `.` to beginning of filename.

@@ -1,5 +1,5 @@
 var contentTable = document.getElementById('list');
-contentTable.setAttribute('class', 'table table-striped');
+contentTable.setAttribute('class', 'table table-hover');
 
 var listItems = [].slice.call(document.querySelectorAll('#list tbody tr'));
 
@@ -17,4 +17,28 @@ input.addEventListener('keyup', function () {
     }).forEach(function(item) {
   	    item.hidden = true;
     });
+});
+
+var currentDirectory = jQuery(location).attr('protocol') + "//" + jQuery(location).attr('host') + "/";
+jQuery.each(jQuery('#nginx-fancyindex-directory').text().split('/'), function(id, directory) {
+  if (id == 0) {
+    jQuery('<li />', {
+      class: "breadcrumb-item"
+    }).append(
+      jQuery('<a />', {
+        href: currentDirectory,
+        text: "(root)"
+      })
+    ).appendTo("#breadcrumbs");
+  } else {
+    jQuery('<li />', {
+      class: "breadcrumb-item"
+    }).append(
+      jQuery('<a />', {
+        href: currentDirectory + directory + "/" ,
+        text: directory
+      })
+    ).appendTo("#breadcrumbs");
+    currentDirectory = currentDirectory + directory + "/";
+  }
 });
