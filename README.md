@@ -30,7 +30,19 @@ fancyindex_name_length 255;
 
 ## Examples
 
-Working example can be checked out at [https://files.llorephie.org/](https://files.llorephie.org).
+A static demo with a mocked directory listing (including the media preview feature below) is hosted on GitHub Pages: [https://llorephie.github.io/ngx-fancyindex-theme-bootstrap/](https://llorephie.github.io/ngx-fancyindex-theme-bootstrap/). Its source is `index.html` in the repository root.
+
+## Media preview
+Files with a recognized image (`png`, `jpg`, `jpeg`, `gif`, `webp`, `svg`, `bmp`, `avif`), video (`mp4`, `webm`, `ogv`, `mov`) or audio (`mp3`, `wav`, `ogg`, `flac`, `m4a`) extension get a small preview icon next to their name. Clicking it opens the file inline in a modal using the browser's native `<img>`/`<video>`/`<audio>` elements &mdash; no extra JS library involved.
+
+## Per-directory templates
+`header.html` and `footer.html` already support overriding the default header/footer on a per-directory basis, without needing to check for the custom file's existence yourself. They use NGINX's SSI `include ... stub="..."` directive:
+
+```
+<!--# include virtual="$request_uri/.directory_index.html" stub="default_index" -->
+```
+
+If `.directory_index.html` (or `.directory_footer.html`) exists in the current directory, its content is included; if it doesn't (or the request fails), NGINX falls back to rendering the named `stub` block (`default_index`/`default_footer`) defined above it. Just drop a `.directory_index.html` and/or `.directory_footer.html` file into any directory you want to customize.
 
 ## Tricks
 To ignore some directories and files to be publically listed append `.` to beginning of filename.
