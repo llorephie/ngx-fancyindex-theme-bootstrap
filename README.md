@@ -1,5 +1,5 @@
 # ngx-fancyindex-theme-bootstrap
-Bootstrap 4 theme for [NGINX](https://www.nginx.org/) server with [ngx-fancyindex](https://github.com/aperezdc/ngx-fancyindex) module. Minimal, modern and simple.
+Bootstrap 5 theme for [NGINX](https://www.nginx.org/) server with [ngx-fancyindex](https://github.com/aperezdc/ngx-fancyindex) module. Minimal, modern and simple. No jQuery required.
 Comes with a search form (only in current directory)
 
 ## Usage

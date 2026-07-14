@@ -19,26 +19,20 @@ input.addEventListener('keyup', function () {
     });
 });
 
-var currentDirectory = jQuery(location).attr('protocol') + "//" + jQuery(location).attr('host') + "/";
-jQuery.each(jQuery('#nginx-fancyindex-directory').text().split('/'), function(id, directory) {
+var breadcrumbs = document.getElementById('breadcrumbs');
+var currentDirectory = location.protocol + "//" + location.host + "/";
+document.getElementById('nginx-fancyindex-directory').textContent.split('/').forEach(function(directory, id) {
+  var li = document.createElement('li');
+  li.setAttribute('class', 'breadcrumb-item');
+  var a = document.createElement('a');
   if (id == 0) {
-    jQuery('<li />', {
-      class: "breadcrumb-item"
-    }).append(
-      jQuery('<a />', {
-        href: currentDirectory,
-        text: "(root)"
-      })
-    ).appendTo("#breadcrumbs");
+    a.setAttribute('href', currentDirectory);
+    a.textContent = "(root)";
   } else {
-    jQuery('<li />', {
-      class: "breadcrumb-item"
-    }).append(
-      jQuery('<a />', {
-        href: currentDirectory + directory + "/" ,
-        text: directory
-      })
-    ).appendTo("#breadcrumbs");
     currentDirectory = currentDirectory + directory + "/";
+    a.setAttribute('href', currentDirectory);
+    a.textContent = directory;
   }
+  li.appendChild(a);
+  breadcrumbs.appendChild(li);
 });
