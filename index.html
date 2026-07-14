@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="Static demo of ngx-fancyindex-theme-bootstrap.">
+        <meta name="author" content="Maxim Llorephie <me@llorephie.org">
+        <title>ngx-fancyindex-theme-bootstrap &mdash; demo</title>
+        <link rel="stylesheet" href="_index/bootstrap.min.css">
+        <link rel="stylesheet" href="_index/main.css">
+        <!-- main.css references the background pattern with a root-absolute path, which only
+             works when this theme is deployed at a server root. Since this demo is served from
+             a GitHub Pages project subpath, override it with a path relative to this page. -->
+        <style>body { background-image: url('_index/bg_pattern.png'); }</style>
+    </head>
+<body>
+    <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href=".">Public file directory</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <ul class="navbar-nav me-auto">
+          	<li class="nav-item"><a class="nav-link" href=".">Root directory</a></li>
+            <li class="nav-item"><a class="nav-link" href="mailto:files@example.org">Hosting & violation requests</a></li>
+          </ul>
+          <form class="d-flex my-2 my-lg-0">
+            <input id="search" type="text" class="form-control me-sm-2" placeholder="Search here...">
+          </form>
+        </div>
+    </nav>
+    <div class="alert alert-info mt-4" role="alert">
+      This is a static demo of <a href="https://github.com/llorephie/ngx-fancyindex-theme-bootstrap">ngx-fancyindex-theme-bootstrap</a> with a mocked directory listing. Try the search box, resize the window to see the responsive navbar, or click the preview icon next to <em>background-pattern.png</em> / <em>sample-tone.wav</em>.
+    </div>
+    <nav aria-label="breadcrumb" class="mt-4">
+      <ol id="breadcrumbs" class="breadcrumb">
+      </ol>
+    </nav>
+<h1 id="nginx-fancyindex-directory" class="d-none">/demo/</h1>
+<table id="list">
+<thead>
+<tr><th style="width:55%">Name</th><th style="width:20%">Last modified</th><th style="width:20%">Size</th></tr>
+</thead>
+<tbody>
+<tr><td><a href="#">Documents/</a></td><td>2026-Jun-02 10:14</td><td>-</td></tr>
+<tr><td><a href="#">Photos/</a></td><td>2026-May-21 18:47</td><td>-</td></tr>
+<tr><td><a href="#">Archives/</a></td><td>2026-Apr-09 09:03</td><td>-</td></tr>
+<tr><td><a href="_index/bg_pattern.png">background-pattern.png</a></td><td>2026-Jul-14 22:04</td><td>19 KiB</td></tr>
+<tr><td><a href="demo/sample-tone.wav">sample-tone.wav</a></td><td>2026-Jul-14 22:21</td><td>129 KiB</td></tr>
+<tr><td><a href="README.md">notes.txt</a></td><td>2026-Mar-11 14:32</td><td>2.1 KiB</td></tr>
+<tr><td><a href="#">archive.zip</a></td><td>2026-Feb-27 21:56</td><td>4.7 MiB</td></tr>
+<tr><td><a href="LICENSE">report.pdf</a></td><td>2026-Jan-30 08:19</td><td>842 KiB</td></tr>
+</tbody>
+</table>
+    </div>
+<footer class="footer">
+    <div class="container">
+		    <p class="text-muted">File directory originally hosted on <a href="https://example.org/">example.org</a> using NGINX webserver. Bootstrap adoptation: <a href="https://github.com/llorephie/ngx-fancyindex-theme-bootstrap" rel="noindex,follow">ngx-fancyindex-theme-bootstrap</a> by <a href="https://llorephie.me/" rel="noindex,follow">Maxim Llorephie</a>.</p>
+    </div>
+</footer>
+<div class="modal fade" id="previewModal" tabindex="-1" aria-labelledby="previewModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="previewModalLabel"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center" id="previewModalBody"></div>
+    </div>
+  </div>
+</div>
+<script src="_index/bootstrap.bundle.min.js"></script>
+<script src="_index/main.js"></script>
+</body>
+</html>
